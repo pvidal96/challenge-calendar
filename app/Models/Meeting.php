@@ -22,7 +22,7 @@ class Meeting extends Model
         'title',
     ];
 
-    public function user(): BelongsToMany
+    public function users(): BelongsToMany
     {
         return $this->belongsToMany(User::class, 'user_meetings')->withPivot('accepted');
     }

@@ -74,7 +74,7 @@ class CalendarService extends Service
             $query->where('start', '<', $to);
         }
 
-        return $query->get();
+        return $query->orderBy('start', 'DESC')->get();
     }
 
     /**

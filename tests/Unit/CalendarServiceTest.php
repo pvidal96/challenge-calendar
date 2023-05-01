@@ -19,7 +19,28 @@ class CalendarServiceTest extends TestCase
 
         $meetings = CalendarService::getInstance()->getAndUpdateMeetings($user);
 
-        $this->assertTrue(true);
+        $this->assertTrue(count($meetings) === 14);
+
+        
+        $user = User::where('id', 2)->first();
+
+        $meetings = CalendarService::getInstance()->getAndUpdateMeetings($user);
+
+        $this->assertTrue(count($meetings) === 1);
+
+        
+        $user = User::where('id', 3)->first();
+
+        $meetings = CalendarService::getInstance()->getAndUpdateMeetings($user);
+
+        $this->assertTrue(count($meetings) === 1);
+
+        
+        $user = User::where('id', 4)->first();
+
+        $meetings = CalendarService::getInstance()->getAndUpdateMeetings($user);
+
+        $this->assertTrue(count($meetings) === 4);
     }
 
     /**
@@ -33,7 +54,6 @@ class CalendarServiceTest extends TestCase
 
         $meetings = CalendarService::getInstance()->getMeetings($user);
 
-        //TODO finish
-        $this->assertTrue(true);
+        $this->assertTrue(count($meetings) === 14);
     }
 }

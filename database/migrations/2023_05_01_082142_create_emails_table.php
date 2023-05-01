@@ -16,8 +16,8 @@ return new class extends Migration
         Schema::create('emails', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('user_id')->index();
-            $table->dateTime('sent_at');
-            $table->json('context');
+            $table->dateTime('sent_at')->nullable();
+            $table->json('content');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
