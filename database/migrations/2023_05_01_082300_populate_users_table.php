@@ -1,5 +1,7 @@
 <?php
 
+use App\Models\Attendee;
+use App\Models\Company;
 use App\Models\User;
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
@@ -35,6 +37,24 @@ return new class extends Migration
                 'first_name' => 'Blaise',
                 'calendar_token' => 'c0R*4iQK21McwLww',
             ],
+        ]);
+
+
+        Company::create([
+            "name" => 'UserGems',
+            "linkedin_url" => "https://www.linkedin.com/company/usergems/",
+            "employees" => 60,
+        ]);
+
+        Attendee::create([
+            "email" => 'stephan@algolia.com',
+            "first_name" => "Stephan",
+            "last_name" => "Lastname",
+            "avatar" => "https://media-exp1.licdn.com/dms/image/C4D03AQHPUFYhbLcAqw/profile-displayphoto-shrink_200_200/0/1516239694635?e=1664409600&v=beta&t=xmiukyVVGR6edLzuNnkBjA0vzfvEg-COOCmcKIjDcGk",
+            "title" => "GTM Chief of Staff",
+            "linkedin_url" => "https://www.linkedin.com/in/stephanusergems",
+            "company_id" => 1,
+            "last_updated" => new DateTime(),
         ]);
     }
 

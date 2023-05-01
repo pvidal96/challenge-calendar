@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('meetings', function (Blueprint $table) {
             $table->id();
-            $table->integer('meeting_id')->index();
+            $table->integer('api_id')->index();
             $table->string('title');
             $table->dateTime('start');
             $table->dateTime('end');

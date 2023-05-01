@@ -3,7 +3,6 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Meeting extends Model
@@ -16,16 +15,16 @@ class Meeting extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'meeting_id',
+        'api_id',
         'start',
         'end',
         'changed',
         'title',
     ];
 
-    public function user(): BelongsTo
+    public function user(): BelongsToMany
     {
-        return $this->belongsTo(User::class, 'user_meetings');
+        return $this->belongsToMany(User::class, 'user_meetings');
     }
 
     public function attendees(): BelongsToMany

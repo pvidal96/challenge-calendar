@@ -3,7 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class User extends Model
 {
@@ -22,8 +22,8 @@ class User extends Model
         'last_calendar_check',
     ];
 
-    public function meetings(): HasMany
+    public function meetings(): BelongsToMany
     {
-        return $this->hasMany(Meeting::class, 'user_meetings');
+        return $this->belongsToMany(Meeting::class, 'user_meetings');
     }
 }
