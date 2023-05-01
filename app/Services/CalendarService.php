@@ -55,27 +55,29 @@ class CalendarService extends Service
             'last_calendar_check' => (new DateTime())->format('Y-m-d H:i:s'),
         ]);
 
-        return $this->getMeetings($user->refresh(), $from, $to);
+        return $user->getMeetings($from, $to);
     }
 
 
     /**
      * Gets meetings for a user
+     * 
+     * //TODO this could be moved to the user model App/Models/User
      */
-    public function getMeetings(User $user, $from = '', $to = ''): Collection
-    {
-        $query = $user->meetings();
+    // public function getMeetings(User $user, $from = '', $to = ''): Collection
+    // {
+    //     $query = $user->meetings();
 
-        if ($from) {
-            $query->where('start', '>', $from);
-        }
+    //     if ($from) {
+    //         $query->where('start', '>', $from);
+    //     }
 
-        if ($to) {
-            $query->where('start', '<', $to);
-        }
+    //     if ($to) {
+    //         $query->where('start', '<', $to);
+    //     }
 
-        return $query->orderBy('start', 'DESC')->get();
-    }
+    //     return $query->orderBy('start', 'DESC')->get();
+    // }
 
     /**
      * Updates meeting in the database if exsists, otherwise it creates it
@@ -122,6 +124,9 @@ class CalendarService extends Service
         return $meeting;
     }
 
+    /**
+     * Gets the Agenda of a given user and page number
+     */
     public function getFromApi(string $token, int $page = 1): CalendarData|null
     {
         try {

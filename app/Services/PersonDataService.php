@@ -28,7 +28,7 @@ class PersonDataService extends Service
     }
 
     /**
-     * Get Attendee from database and if it's expired, retreive the info and update it on the database
+     * Get Attendee from database and if it's expired or it doesn't exist, retreive the info and update it on the database
      */
     public function getAttendee(string $email): Attendee|null
     {
@@ -78,6 +78,11 @@ class PersonDataService extends Service
     }
 
 
+    /**
+     * Gets the data of a person given an email address
+     * 
+     * Attention: connects to paid API. 
+     */
     public function getFromApi(string $email): PersonData|null
     {
         try {
@@ -92,7 +97,9 @@ class PersonDataService extends Service
         }
     }
 
-
+    /**
+     * Gets the data of a person from the database.
+     */
     public function getFromDatabase(string $email): Attendee|null
     {
         return Attendee::where('email', $email)->first();

@@ -22,9 +22,9 @@ class MorningEmailService extends Service
     /**
      * Creates the JSON data neccessary for the morning email containing a user agenda. 
      */
-    public function prepareEmail(User $main_user, $from = "", $to = ""): string
+    public function prepareEmail(User $main_user, $from = "", $to = ""): Email
     {
-        $meetings = CalendarService::getInstance()->getMeetings($main_user, $from, $to);
+        $meetings = $main_user->getMeetings($from, $to);
 
         //TODO email content as a JSONResource, not a plain array
         $email_content = [];
@@ -79,14 +79,11 @@ class MorningEmailService extends Service
             ];
         }
 
-
-        $json = json_encode($email_content);
-
-        Email::create([
+        $email = Email::create([
             'user_id' => $main_user->id,
-            'content' => $json
+            'content' => json_encode($email_content)
         ]);
 
-        return $json;
+        return $email;
     }
 }

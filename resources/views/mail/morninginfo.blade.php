@@ -100,109 +100,49 @@
             <div class="text-green text-bold text-big">Your Morning Update</div>
         </div>
         <div class="container">
-            <div>
-                <div class="row text-centered">
-                    <div class="text-green text-bold text-big">9:30 AM'</div>
-                    <div class="text-bold text-small space-left"> - 10:00 AM |</div>
-                    <div class="text-bold space-left text-big" style="text-decoration: underline">UserGems X Algolia</div>
-                    <img class="icon space-left" src="{{ asset('images/yes.png') }}" alt="Attending">
-                    <div class="text-small space-left">(30 min)</div>
-                </div>
-                <div class="row text-centered">
-                    <div class="text-small">Joining from UserGems:</div>
-                    <div class="text-bold text-small space-left">Joss</div>
-                    <img class="icon space-left" src="{{ asset('images/yes.png') }}" alt="Attending">
-                </div>
-                <div class="row text-centered padding-top-small">
-                    <div class="text-bold text-big" style="text-decoration: underline">Algolia</div>
-                    <a href="TODO" class="space-left" style="display: flex;">
-                        <img class="icon" src="{{ asset('images/linkedin.svg') }}" alt="Linkedin">
-                    </a>
-                    <img class="icon space-left" src="{{ asset('images/employees.png') }}" alt="Employees">
-                    <div class="space-left">700</div>
-                </div>
-                <div class="row padding-top-small">
-                    <div>
-                        <img class="avatar" src="https://media.licdn.com/dms/image/C5603AQEWGd3Fh4f2Ow/profile-displayphoto-shrink_100_100/0/1580131621409?e=1688601600&v=beta&t=8fdz-4BajsMxyKx_EtGbTsYMvUrvBMUFb2wuXCdStPM" />
+            <div class="row">
+                <div>
+                    <div class="row text-centered">
+                        <div class="text-green text-bold text-big">9:30 AM</div>
+                        <div class="text-bold text-small space-left"> - 10:00 AM |</div>
+                        <div class="text-bold space-left text-big" style="text-decoration: underline">UserGems X Algolia</div>
+                        <img class="icon space-left" src="{{ asset('images/yes.png') }}" alt="Attending">
+                        <div class="text-small space-left">(30 min)</div>
                     </div>
-                    <div class="space-left">
-                        <div class="row">
-                            <div class="text-green text-bold">Joshua Lastname</div>
-                            <img class="icon space-left" src="{{ asset('images/yes.png') }}" alt="Attending">
-                            <a href="TODO" class="space-left" style="display: flex;">
-                                <img class="icon" src="{{ asset('images/linkedin.svg') }}" alt="Linkedin">
-                            </a>
-                        </div>
-                        <div class="text-bold text-small padding-top-tiny">GTM Chieff of Staff</div>
-                        <div class="row text-centered padding-top-tiny">
-                            <div class="text-bold">12th</div>
-                            <div class="space-left">Meeting</div>
-                            <div class="text-small space-left">| Met with Blaise (1x) & Christian (4x)</div>
-                        </div>
+                    <div class="row text-centered">
+                        <div class="text-small">Joining from UserGems:</div>
+                        <div class="text-bold text-small space-left">Joss</div>
+                        <img class="icon space-left" src="{{ asset('images/yes.png') }}" alt="Attending">
                     </div>
-                </div>
-                <!-- REPEATED DELETE -->
-                <div class="row padding-top-small">
-                    <div>
-                        <img class="avatar" src="https://media.licdn.com/dms/image/C5603AQEWGd3Fh4f2Ow/profile-displayphoto-shrink_100_100/0/1580131621409?e=1688601600&v=beta&t=8fdz-4BajsMxyKx_EtGbTsYMvUrvBMUFb2wuXCdStPM" />
+                    <div class="row text-centered padding-top-small">
+                        <div class="text-bold text-big" style="text-decoration: underline">Algolia</div>
+                        <a href="TODO" class="space-left" style="display: flex;">
+                            <img class="icon" src="{{ asset('images/linkedin.svg') }}" alt="Linkedin">
+                        </a>
+                        <img class="icon space-left" src="{{ asset('images/employees.png') }}" alt="Employees">
+                        <div class="space-left">700</div>
                     </div>
-                    <div class="space-left">
-                        <div class="row">
-                            <div class="text-green text-bold">Joshua Lastname</div>
-                            <img class="icon space-left" src="{{ asset('images/yes.png') }}" alt="Attending">
-                            <a href="TODO" class="space-left" style="display: flex;">
-                                <img class="icon" src="{{ asset('images/linkedin.svg') }}" alt="Linkedin">
-                            </a>
+                    <div class="row padding-top-small">
+                        <div>
+                            <img class="avatar" src="https://media.licdn.com/dms/image/C5603AQEWGd3Fh4f2Ow/profile-displayphoto-shrink_100_100/0/1580131621409?e=1688601600&v=beta&t=8fdz-4BajsMxyKx_EtGbTsYMvUrvBMUFb2wuXCdStPM" />
                         </div>
-                        <div class="text-bold text-small padding-top-tiny">GTM Chieff of Staff</div>
-                        <div class="row text-centered padding-top-tiny">
-                            <div class="text-bold">12th</div>
-                            <div class="space-left">Meeting</div>
-                            <div class="text-small space-left">| Met with Blaise (1x) & Christian (4x)</div>
+                        <div class="space-left">
+                            <div class="row">
+                                <div class="text-green text-bold">Joshua Lastname</div>
+                                <img class="icon space-left" src="{{ asset('images/yes.png') }}" alt="Attending">
+                                <a href="TODO" class="space-left" style="display: flex;">
+                                    <img class="icon" src="{{ asset('images/linkedin.svg') }}" alt="Linkedin">
+                                </a>
+                            </div>
+                            <div class="text-bold text-small padding-top-tiny">GTM Chieff of Staff</div>
+                            <div class="row text-centered padding-top-tiny">
+                                <div class="text-bold">12th</div>
+                                <div class="space-left">Meeting</div>
+                                <div class="text-small space-left">| Met with Blaise (1x) & Christian (4x)</div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="row padding-top-small">
-                    <div>
-                        <img class="avatar" src="https://media.licdn.com/dms/image/C5603AQEWGd3Fh4f2Ow/profile-displayphoto-shrink_100_100/0/1580131621409?e=1688601600&v=beta&t=8fdz-4BajsMxyKx_EtGbTsYMvUrvBMUFb2wuXCdStPM" />
-                    </div>
-                    <div class="space-left">
-                        <div class="row">
-                            <div class="text-green text-bold">Joshua Lastname</div>
-                            <img class="icon space-left" src="{{ asset('images/yes.png') }}" alt="Attending">
-                            <a href="TODO" class="space-left" style="display: flex;">
-                                <img class="icon" src="{{ asset('images/linkedin.svg') }}" alt="Linkedin">
-                            </a>
-                        </div>
-                        <div class="text-bold text-small padding-top-tiny">GTM Chieff of Staff</div>
-                        <div class="row text-centered padding-top-tiny">
-                            <div class="text-bold">12th</div>
-                            <div class="space-left">Meeting</div>
-                            <div class="text-small space-left">| Met with Blaise (1x) & Christian (4x)</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row padding-top-small">
-                    <div>
-                        <img class="avatar" src="https://media.licdn.com/dms/image/C5603AQEWGd3Fh4f2Ow/profile-displayphoto-shrink_100_100/0/1580131621409?e=1688601600&v=beta&t=8fdz-4BajsMxyKx_EtGbTsYMvUrvBMUFb2wuXCdStPM" />
-                    </div>
-                    <div class="space-left">
-                        <div class="row">
-                            <div class="text-green text-bold">Joshua Lastname</div>
-                            <img class="icon space-left" src="{{ asset('images/no.png') }}" alt="Attending">
-                            <a href="TODO" class="space-left" style="display: flex;">
-                                <img class="icon" src="{{ asset('images/linkedin.svg') }}" alt="Linkedin">
-                            </a>
-                        </div>
-                        <div class="text-bold text-small padding-top-tiny">GTM Chieff of Staff</div>
-                        <div class="row text-centered padding-top-tiny">
-                            <div class="text-bold">12th</div>
-                            <div class="space-left">Meeting</div>
-                            <div class="text-small space-left">| Met with Blaise (1x) & Christian (4x)</div>
-                        </div>
-                    </div>
-                </div>
-                <!-- END REPEATED DELETE -->
             </div>
         </div>
     </div>
