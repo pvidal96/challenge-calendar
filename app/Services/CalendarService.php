@@ -37,7 +37,6 @@ class CalendarService extends Service
         $page = 1;
 
         do {
-
             $api_meetings = $this->getFromApi($user->calendar_token, $page);
 
             foreach ($api_meetings->data as $meeting) {
@@ -50,7 +49,7 @@ class CalendarService extends Service
             }
 
             $page++;
-        } while (!$already_checked);
+        } while (!$already_checked && $api_meetings && $api_meetings->total > ($api_meetings->per_page * ($page - 1)));
 
         $user->update([
             'last_calendar_check' => (new DateTime())->format('Y-m-d H:i:s'),
@@ -108,16 +107,17 @@ class CalendarService extends Service
             $personDataService = PersonDataService::getInstance();
 
             foreach ($attendees as $email) {
-                var_export($email);
                 $attendee = $personDataService->getAttendee($email);
 
-                $update[$attendee->id] = ['accepted' => !!in_array($email, $meetingData->accepted)];
+                if ($attendee) {
+                    $update[$attendee->id] = ['accepted' => !!in_array($email, $meetingData->accepted)];
+                }
             }
         }
 
         $meeting->attendees()->sync($update);
 
-        $user->meetings()->syncWithoutDetaching($meeting->id);
+        $user->meetings()->syncWithoutDetaching([$meeting->id => ['accepted' => !!in_array($user->email, $meetingData->accepted)]]);
 
         return $meeting;
     }

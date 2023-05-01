@@ -18,12 +18,13 @@ class User extends Model
         'email',
         'first_name',
         'last_name',
+        'company_id',
         'calendar_token',
         'last_calendar_check',
     ];
 
     public function meetings(): BelongsToMany
     {
-        return $this->belongsToMany(Meeting::class, 'user_meetings');
+        return $this->belongsToMany(Meeting::class, 'user_meetings')->withPivot('accepted');
     }
 }

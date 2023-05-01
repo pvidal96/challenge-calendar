@@ -20,6 +20,9 @@ return new class extends Migration
             $table->string('last_name')->nullable();
             $table->string('calendar_token');
             $table->dateTime('last_calendar_check')->nullable();
+            $table->unsignedBigInteger('company_id');
+
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('restrict');
         });
     }
 

@@ -16,6 +16,7 @@ return new class extends Migration
         Schema::create('user_meetings', function (Blueprint $table) {
             $table->unsignedBigInteger('user_id')->index();
             $table->unsignedBigInteger('meeting_id')->index();
+            $table->boolean('accepted');
 
             $table->foreign('user_id')->references('id')->on('users')->onDelete('restrict');
             $table->foreign('meeting_id')->references('id')->on('meetings')->onDelete('restrict');

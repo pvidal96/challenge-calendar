@@ -34,7 +34,6 @@ class PersonDataService extends Service
     {
         $attendee = $this->getFromDatabase($email);
 
-        var_export($attendee); die();
         //If it's expire, renew the data
         if (!$attendee || (new DateTime($attendee->last_updated))->modify('+' . self::EXPIRATION_DAYS . ' days') < new DateTime()) {
             $person_data = $this->getFromApi($email);

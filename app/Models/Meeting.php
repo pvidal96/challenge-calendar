@@ -24,7 +24,7 @@ class Meeting extends Model
 
     public function user(): BelongsToMany
     {
-        return $this->belongsToMany(User::class, 'user_meetings');
+        return $this->belongsToMany(User::class, 'user_meetings')->withPivot('accepted');
     }
 
     public function attendees(): BelongsToMany

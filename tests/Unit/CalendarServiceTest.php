@@ -19,9 +19,6 @@ class CalendarServiceTest extends TestCase
 
         $meetings = CalendarService::getInstance()->getAndUpdateMeetings($user);
 
-
-        var_export($meetings);
-        die();
         $this->assertTrue(true);
     }
 
