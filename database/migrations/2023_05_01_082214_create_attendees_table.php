@@ -13,13 +13,18 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('users', function (Blueprint $table) {
+        Schema::create('attendees', function (Blueprint $table) {
             $table->id();
             $table->string('email')->index();
             $table->string('first_name');
-            $table->string('last_name')->nullable();
-            $table->string('calendar_token');
-            $table->dateTime('last_calendar_check')->nullable();
+            $table->string('last_name');
+            $table->string('avatar');
+            $table->string('title');
+            $table->string('linkedin_url');
+            $table->unsignedBigInteger('company_id');
+            $table->dateTime('last_updated');
+
+            $table->foreign('company_id')->references('id')->on('companies')->onDelete('restrict');
         });
     }
 
@@ -30,6 +35,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('users');
+        Schema::dropIfExists('attendees');
     }
 };

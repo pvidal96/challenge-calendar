@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 
-class User extends Model
+class Company extends Model
 {
     public $timestamps = false;
 
@@ -15,15 +15,13 @@ class User extends Model
      * @var array<int, string>
      */
     protected $fillable = [
-        'email',
-        'first_name',
-        'last_name',
-        'calendar_token',
-        'last_calendar_check',
+        'name',
+        'linkedin_url',
+        'employees',
     ];
 
-    public function meetings(): HasMany
+    public function users(): HasMany
     {
-        return $this->hasMany(Meeting::class, 'user_meetings');
+        return $this->hasMany(Attendee::class);
     }
 }
