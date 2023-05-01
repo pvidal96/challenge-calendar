@@ -26,6 +26,7 @@ class MorningEmailService extends Service
     {
         $meetings = CalendarService::getInstance()->getMeetings($main_user, $from, $to);
 
+        //TODO email content as a JSONResource, not a plain array
         $email_content = [];
 
         foreach ($meetings as $meeting) {
@@ -35,7 +36,7 @@ class MorningEmailService extends Service
             $attendees = $meeting->attendees()->orderBy('company_id')->get();
 
             foreach ($users as $user) {
-                if ($user->company_id === $main_user->company_id) {
+                if ($user->company_id == $main_user->company_id && $user->id !== $main_user->id) {
                     $attending_same_company[$user->first_name] = $user->pivot->accepted;
                 }
             }
@@ -63,7 +64,7 @@ class MorningEmailService extends Service
                         'title' => $attendee->title,
                         'linkedin_url' => $attendee->linkedin_url,
                         'accepted' => $attendee->pivot->accepted,
-                        //SQL QUERY to get "Met with Blaise (4x)"
+                        //TODO SQL QUERY to get "Met with Blaise (4x)"
                     ];
                 }
             }

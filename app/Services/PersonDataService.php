@@ -88,7 +88,6 @@ class PersonDataService extends Service
             return $person_data;
         } catch (Exception $e) {
             //TODO handle properly
-            var_export($e->getMessage());
             return null;
         }
     }

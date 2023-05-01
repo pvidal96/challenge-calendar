@@ -82,7 +82,7 @@ class CalendarService extends Service
      */
     public function updateMeeting(User $user, MeetingData $meetingData): Meeting
     {
-        $meeting = $user->meetings()->where('api_id', $meetingData->id)->first();
+        $meeting = Meeting::where('api_id', $meetingData->id)->first();
 
         $data = [
             'api_id' => $meetingData->id,
@@ -132,7 +132,6 @@ class CalendarService extends Service
             return $calendar_data;
         } catch (Exception $e) {
             //TODO handle properly
-            var_export($e->getMessage());
             return null;
         }
     }
